@@ -48,6 +48,7 @@ void setup(){
   //sensor.enableGyroscope();
   //sensor.enableOrientation();
   sensor.start();
+  setupLED();
 
 }
  
@@ -62,6 +63,7 @@ void draw(){
   info += "z: " + nfp(accelerometerZ, 1, 3)+ "\n";
   info += "\n";
   info += lightValue+ "\n"; //whatever variable I want to send to laptop
+  info += mode+ "\n"; //whatever variable I want to send to laptop
   
   //Phone screen crap
   background(0);
@@ -69,29 +71,7 @@ void draw(){
   fill(255);
   text(info,50,50);
   
-  //uses OSC to send values to Laptop
-  OscMessage sendValue = new OscMessage(phoneName);
-  sendValue.add(lightValue);
-  sendValue.add(accelerometerX);
-  sendValue.add(accelerometerY);
-  sendValue.add(accelerometerZ);
-  oscP5.send(sendValue, laptop);
+//sendOSC();
 }
-
-//upon reading Accelerometer
-void onAccelerometerEvent(float x, float y, float z)
-{
-  accelerometerX = x;
-  accelerometerY = y;
-  accelerometerZ = z;
-}
-
-//Saving this for something else?
-void onLightEvent(float v){
-   
-  lightValue = v;
-   
-}
- 
 
 
