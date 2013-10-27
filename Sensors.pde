@@ -1,21 +1,15 @@
-void onAccelerometerEvent(float x, float y, float z)
-{
-  accelerometerX = x;
-  accelerometerY = y;
-  accelerometerZ = z;
-}
+///////////////LIBRARIES////////////////
+import ketai.sensors.*;
 
-//Saving this for something else?
-void onLightEvent(float v){
-   
-  lightValue = v;
-   
-}
+////////////////VARIABLES//////////////// 
+KetaiGesture gesture;
+KetaiSensor sensor;
  
- 
-void mousePressed() {
-  mode++;
-  if (mode >10){
-    mode=0;
-  }
-}
+float accelerometerX, accelerometerY, accelerometerZ;
+float lightValue;
+//void mousePressed() {
+//  mode++;
+//  if (mode >10){
+//    mode=0;
+//  }
+//}
