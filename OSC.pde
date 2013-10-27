@@ -3,6 +3,7 @@
 String laptopIP = "10.0.1.3";
 String everyoneIP = "10.0.1.255";
 String phoneName = "/PHONE2";//"/PHONE2";**with Slash
+String phoneName1 = "/PHONE1";//"/PHONE2";**with Slash
 
 ///////////////LIBRARIES////////////////
 import ketai.net.*;
@@ -13,7 +14,7 @@ import netP5.*;
 public OscP5 oscP5;
 //NetAddress laptop;
 NetAddress everyone;
-boolean empty = 0;
+int empty = 0;
 
 //////////////FUNCTIONS////////////////
 void setupOSC() {

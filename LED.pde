@@ -34,13 +34,20 @@ void ioioLoop(IOIO ioio) throws ConnectionLostException {
     delay(1000);
   }
 
-  if (mode <0) {
+  if (mode <= 0) {
     mode = 0;
+    empty = 1;
+  
   }
+  if (mode >0){
+    
+    empty = 0;
+  }
+  sendOSC(empty);
+  
   if (mode >10) {
     mode = 10;
   }
-
 
   ////BLACKOUT-----------------------------  
   if (mode == 0) {
