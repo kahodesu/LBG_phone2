@@ -14,7 +14,7 @@ import netP5.*;
 public OscP5 oscP5;
 //NetAddress laptop;
 NetAddress everyone;
-int empty = 0;
+int tankEmpty = 0;//2 when tank is full
 
 //////////////FUNCTIONS////////////////
 void setupOSC() {
@@ -28,6 +28,7 @@ void oscEvent(OscMessage theOscMessage) {
   if (theOscMessage.checkAddrPattern(phoneName1) == true) {
     if (theOscMessage.checkTypetag("i")) {
     phoneVal1 = theOscMessage.get(0).intValue();  
+      println("received");
     }
   }
 }
@@ -35,7 +36,7 @@ void oscEvent(OscMessage theOscMessage) {
 void sendOSC(int Msg){
   OscMessage msg = new OscMessage(phoneName);
    msg.add(Msg); 
-    oscP5.send(msg, everyone);
+   oscP5.send(msg, everyone);
   println("sent");
 }
 

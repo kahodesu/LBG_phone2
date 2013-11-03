@@ -1,12 +1,13 @@
 //The phone prints out this status on its screen. :D
 
-void status() {
+synchronized void status() {
   String info = "";
   info += "PHONE TWO\n";
   info += "=======================\n";
  // info += "phoneVal1: "+ phoneVal1 + "\n"; 
-  info += "mode: "+ mode+ "\n"+frameCount; //whatever variable I want to send to laptop
-
+ // info += "powerLED: "+ powerLED+ "\n"+frameCount; //whatever variable I want to send to laptop
+ info += "photo: " +photo+ "\n";
+  info += "phoneVal1: " + phoneVal1 + ", powerLED: "+powerLED+ "\n";
   //Phone screen crap
 
   textSize(20);

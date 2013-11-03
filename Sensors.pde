@@ -7,9 +7,11 @@ KetaiSensor sensor;
  
 float accelerometerX, accelerometerY, accelerometerZ;
 float lightValue;
+
+
 //void mousePressed() {
-//  mode++;
-//  if (mode >10){
-//    mode=0;
+//  powerLED++;
+//  if (powerLED >10){
+//    powerLED=0;
 //  }
 //}

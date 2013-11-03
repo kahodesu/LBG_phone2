@@ -16,13 +16,15 @@ void setup() {
   size(displayWidth, displayHeight);
   orientation(LANDSCAPE);
   new PIOIOManager(this).start();
+ 
   setupOSC();
   setupBT();
 }
 
 
-void draw() {
-
+synchronized void draw() {
+background(0);
+status();
 }
 
 
